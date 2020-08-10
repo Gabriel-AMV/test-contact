@@ -22,7 +22,7 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'];
-      this.justSee = !this.router.url.includes('edit')
+      this.justSee = !this.router.url.includes('edit') && !!this.id
     });
     if (!this.id) {
       this.contactForm = this.fb.group({
