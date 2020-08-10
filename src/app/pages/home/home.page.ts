@@ -20,7 +20,7 @@ export class HomePage implements OnInit{
   ngOnInit(){
     // Para cambiar de localStorage a JSON File se utiliza el enum LoadFrom (cambiar a propiedad FromJSON)
     // Si se desea cambiar el json por default, vaya a contact.service
-    this.contactService.loadStorage(LoadFrom.FromLocalStorage);
+    this.contactService.loadStorage(LoadFrom.FromJSON);
     console.log(this.contactService.contacts)
   }
   addContact(){

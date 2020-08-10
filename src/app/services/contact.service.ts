@@ -44,15 +44,15 @@ export class ContactService {
   }
 
   loadStorage(from: LoadFrom) {
-    if (from == LoadFrom.FromJSON)
+  
+    if ( localStorage.getItem('data') ) {
+      this.contacts = JSON.parse( localStorage.getItem('data') );
+    } else if (from == LoadFrom.FromJSON)
     this.getDummyData().then(x=> {
       this.contacts = x;
     })
-    else
-    if ( localStorage.getItem('data') ) {
-      this.contacts = JSON.parse( localStorage.getItem('data') );
-    } else {
-      this.contacts = [];
+    else {
+      this.contacts = []
     }
   }
 
