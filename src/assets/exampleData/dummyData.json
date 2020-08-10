@@ -1,0 +1,30 @@
+[
+    {
+        "email": "gabrielalexmv@gmail.com",
+        "id": 1597081168360,
+        "jobInformation": "Desempleado",
+        "name": "Gabriel Mireles",
+        "numbers": [
+            {
+                "number": 8095946929
+            },
+            {
+                "number": 8296681098
+            }
+        ]
+    },
+    {
+        "email": "pedromartinez@gmail.com",
+        "id": 1597082366721,
+        "jobInformation": "",
+        "name": "Pedro Martínez",
+        "numbers": [
+            {
+                "number": 8098343243
+            },
+            {
+                "number": 8098343244
+            }
+        ]
+    }
+]

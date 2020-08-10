@@ -1,0 +1,22 @@
+{
+    "contactList": "Lista de contactos",
+    "contacts":"Contactos",
+    "email": "Correo",
+    "jobInformation": "Información de trabajo",
+    "number":"Número",
+    "name":"Nombre",
+    "addNumber":"Agregar Número",
+    "requiredName": "El nombre es requerido",
+    "emailFormat": "El correo debe seguir el formato: example@example.com",
+    "numberRequired": "El número es requerido",
+    "numberInfo": "Se necesitan 10 dígitos sin ningún otro caracter: 8094343456 (si se desea ver la razón, ver comentario addNumber de la clase contactForm.component.ts)",
+    "savedContact": "Contacto guardado",
+    "goodJob": "Buen trabajo",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "deleteContact": "Eliminar Contacto", 
+    "sureDeleteContact": "¿Seguro que desea eliminar el contacto?",
+    "testAtl":"Test de ATL Software",
+    "editInfo": "Para editar un contacto haz swipe hacia la izquierda",
+    "changeLoad": "En la carpeta pages > homepage > ngOnInit se puede cambiar la carga de datos de localStorage a jsonFile"
+}
