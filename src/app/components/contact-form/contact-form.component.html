@@ -7,18 +7,18 @@
     <ion-list>
       <ion-item>
         <ion-label position="floating" translate="name"></ion-label>
-        <ion-input formControlName="name"></ion-input>
+        <ion-input  formControlName="name"></ion-input>
         <ion-text class="animated fadeInDown" color="danger" translate="requiredName" *ngIf="name.invalid && name.touched"></ion-text>
       </ion-item>
       <ion-item>
         <ion-label position="floating" translate="email"></ion-label>
-        <ion-input formControlName="email"></ion-input>
+        <ion-input  formControlName="email"></ion-input>
         <ion-text  class="animated fadeInDown" color="danger" translate="emailFormat" *ngIf="email.invalid && email.touched"></ion-text>
 
       </ion-item>
       <ion-item>
         <ion-label position="floating" translate="jobInformation"></ion-label>
-        <ion-input formControlName="jobInformation"></ion-input>
+        <ion-input  formControlName="jobInformation"></ion-input>
       </ion-item>
     </ion-list>
 
@@ -27,10 +27,10 @@
         <div class="animated fadeInDown" *ngFor="let number of numbersForms.controls; let i = index" [formGroupName]="i">
           <ion-item>
             <ion-label position="floating" translate="number"></ion-label>
-            <ion-input type="number" style="width: 50%;" formControlName="number"></ion-input>
+            <ion-input  type="number" style="width: 50%;" formControlName="number"></ion-input>
            <ion-text class="animated fadeInDown" color="danger" translate="numberInfo" *ngIf="number.invalid && number.touched"></ion-text>
             
-            <ion-fab-button size="small" color="danger" (click)="deleteNumber(i)"  slot="end">
+            <ion-fab-button *ngIf="!justSee" size="small" color="danger" (click)="deleteNumber(i)"  slot="end">
               <ion-icon name="remove"></ion-icon>
             </ion-fab-button>
           </ion-item>
@@ -39,8 +39,8 @@
       </ion-list>
     </div>
 
-    <ion-button color="tertiary" (click)="addNumber()" translate="addNumber"></ion-button>
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-button *ngIf="!justSee" color="tertiary" (click)="addNumber()" translate="addNumber"></ion-button>
+    <ion-fab *ngIf="!justSee" vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button [disabled]="!contactForm.valid || numbersForms.controls.length == 0 " color="tertiary"
                      (click)="save()">
         <ion-icon name="save"></ion-icon>

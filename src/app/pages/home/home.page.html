@@ -19,7 +19,7 @@
         <ion-item-option color="danger" (click)="deleteContact(contact)"> {{'delete'| translate}}  <ion-icon  name="trash"></ion-icon></ion-item-option>
       </ion-item-options>
   
-      <ion-item >
+      <ion-item (click)="seeContact(contact)">
         <ion-label>{{contact.name}}</ion-label>
       </ion-item>
   

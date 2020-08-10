@@ -20,6 +20,11 @@ const routes: Routes = [
     path: 'contact/edit/:id',
     loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
   },
+
+  {
+    path: 'contact/:id',
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
+  },
 ];
 
 @NgModule({

@@ -6,6 +6,7 @@ import { AlertService } from 'src/app/services/alert.service';
 import { TranslateService } from '@ngx-translate/core';
 import { IonList } from '@ionic/angular';
 import { LoadFrom } from 'src/app/models/LoadFrom.enum';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { LoadFrom } from 'src/app/models/LoadFrom.enum';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-
+  contact: Contact;
   @ViewChild( IonList ) lista: IonList;
   constructor(private router: Router, private contactService: ContactService, private alertService: AlertService, private ts: TranslateService) {}
 
@@ -36,4 +37,9 @@ export class HomePage implements OnInit{
     this.lista.closeSlidingItems();
   }
 
+  seeContact(contact: Contact) {
+    this.contact = contact;
+    console.log(contact)
+    this.router.navigate(['contact/'+contact.id])
+  }
 }

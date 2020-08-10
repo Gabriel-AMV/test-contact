@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class ContactFormComponent implements OnInit {
   id: number;
+  justSee = false;
   contactForm: FormGroup;
   private sub: Subscription;
   constructor(private fb: FormBuilder, private contactService: ContactService,
@@ -21,15 +22,16 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'];
+      this.justSee = !this.router.url.includes('edit')
     });
     if (!this.id) {
       this.contactForm = this.fb.group({
-        id: 0,
-        name: ['', Validators.required],
+        id: 0, 
+        name: ['' ,Validators.required],
         email: ['', Validators.email],
         jobInformation: '',
         numbers: this.fb.array([])
-      })
+      } )
     } else {
       let contact = this.contactService.getContact(this.id);
       this.contactForm = this.fb.group({
@@ -39,6 +41,9 @@ export class ContactFormComponent implements OnInit {
         numbers: this.fb.array(contact.numbers.map(cc => this.loadNumbers(cc)))
       })
     }
+
+    if (this.justSee)
+    this.contactForm.disable();
   }
 
 
